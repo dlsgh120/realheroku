@@ -98,7 +98,7 @@
                    <div class="button-flex">
                    <button class="button-flex-item hover">SHOP</button>
                    <button class="button-flex-item hover" onclick = "location.href = '/board'">F/Q</button>
-                   <button class="button-flex-item hover">UBOUT</button>
+                   <button class="button-flex-item hover" onclick = "location.href = '/about'">UBOUT ME</button>
                    </div>
                 
 		   		</div>
