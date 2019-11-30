@@ -13,15 +13,20 @@
         <style>
           html, body {
                 background-color: #fff;
-                color: #636b6f;
+               
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
+                background:url("/images/slide_2.jpg");
+                background-repeat:no-repeat;
+                background-attachment:fixed;
+                
+                
             }
          .top-right{
            text-align:right;
          }  
          .links > a {
-                color: #636b6f;
+                color:white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -30,17 +35,43 @@
                 text-transform: uppercase;
             }
         .container{
-            background:url("/slide_2.jpg");
-            height:700px;
-            border:solid 1px;
+     
         }
          
         .c-logo{
            font-size:60px;
            color:white;
            font-weight:bold;
-           margin-top:auto;
-           margin-bottom:auto;
+          margin-left:auto;
+          margin-right:auto;
+            margin-top:300px;
+        }
+        .button-flex{
+            display:flex;
+            margin-top:70px;
+        }
+        .logo-flex{
+            display:flex;
+        }
+        .button-flex-item{
+            display:block; 
+            width:200px; 
+            height:50px; 
+            line-height:40px; 
+            border:1px #00ffbf solid;; 
+            margin:15px auto; 
+            background-color:#00ffbf; 
+            text-align:center; 
+            cursor: pointer; 
+            color:white; 
+            font-weight:bold;
+            transition:all 0.9s, color 0.3;
+            border-radius:24px;
+            
+        }
+        .button-flex-item:hover{
+            box-shadow: 0 80px 0 0 rgba(0,0,0,0.25) inset, 
+            0 -80px 0 0 rgba(0,0,0,0.25) inset;
         }
         </style>
     </head>
@@ -61,8 +92,15 @@
             @endif
          
 		   		<div class="container">
-		   		<div class="c-logo">Take Your Business To The Next Level</div>
-		   		<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
+                   <div class="logo-flex">
+                   <a class="c-logo">This is unique shoes shop</a>
+                   </div>
+                   <div class="button-flex">
+                   <button class="button-flex-item hover">SHOP</button>
+                   <button class="button-flex-item hover" onclick = "location.href = '/board'">F/Q</button>
+                   <button class="button-flex-item hover">UBOUT</button>
+                   </div>
+                
 		   		</div>
         </div>
     </body>
