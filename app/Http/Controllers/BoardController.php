@@ -56,10 +56,15 @@ class BoardController extends Controller
     
     public function read($id)
     {   
+        if(empty(auth::user())){
+            return redirect('/login');
+        }
+        else{
         $boards = Board::find($id);
         $boards->count=$boards->count+1;
         $boards->save();
         return view('read',compact('boards'));
+        }
     }
 
     public function edit($id)

@@ -53,7 +53,11 @@
   <td class="table-border-none" colspan="3"><a href="/board">목록</a></td>
   @if($boards->userId==Auth::user()->id)
   <td class="table-border-none2"><a href="/board/destroy/{{$boards->id}}">삭제</a><a class="table-add-item"href="/board/edit/{{$boards->id}}">수정</a></td>
-@endif
+  @endif
+  @if(empty(auth::user()))
+    {{test}}
+  @endif
+
   </tr>
 </table>
 
