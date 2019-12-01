@@ -10,4 +10,15 @@ class AboutController extends Controller
     {
         return view('about');
     }
+    public function explane(){
+        return view('about_explane');
+    }
+
+    public function information(){
+        return view('about_informaiton');
+    }
+
+    public function usingTec(){
+        return view('about_usingTec');
+    }
 }

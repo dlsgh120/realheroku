@@ -37,3 +37,9 @@ Route::get('/board/destroy/{id}','BoardController@destroy'); //삭제
 
 Route::get('/about','AboutController@index');
 
+Route::get('/about/1','AboutController@explane'); //홈페이지 설명
+ 
+Route::get('/about/2','AboutController@information'); //나의정보
+
+Route::get('/about/3','AboutController@usingTec'); //사용기술
+

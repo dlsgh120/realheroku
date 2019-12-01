@@ -1,4 +1,9 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -7,36 +12,19 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
 
         <!-- Styles -->
         <style>
-          html, body {
-                background-color: #fff;
-               
+          html, body { 
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 background:url("/images/slide_2.jpg");
                 background-repeat:no-repeat;
                 background-attachment:fixed;
                 
-                
             }
-         .top-right{
-           text-align:right;
-         }  
-         .links > a {
-                color:white;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-        .container{
-     
-        }
+        
          
         .c-logo{
            font-size:60px;
@@ -73,14 +61,28 @@
             box-shadow: 0 80px 0 0 rgba(0,0,0,0.25) inset, 
             0 -80px 0 0 rgba(0,0,0,0.25) inset;
         }
+        .bottom{
+        
+        }
         </style>
     </head>
     <body>
         <div>
-            @if (Route::has('login'))
+            <!-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                       
+                        
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -90,10 +92,10 @@
                     @endauth
                 </div>
             @endif
-         
+          -->
 		   		<div class="container">
                    <div class="logo-flex">
-                   <a class="c-logo">This is unique shoes shop</a>
+                   <div class="c-logo">This is unique shoes shop</div>
                    </div>
                    <div class="button-flex">
                    <button class="button-flex-item hover">SHOP</button>
@@ -103,5 +105,13 @@
                 
 		   		</div>
         </div>
+      
+       <div class ="bottom"> 
+       
+       </div>
     </body>
 </html>
+@endsection
+
+<div>
+</div>

@@ -11,8 +11,16 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
     <title>AboutMe</title>
 </head>
+<style>
+
+</style>
 <body>
-    AboutMe blade 입니다.
+
+<div>
+<button onclick="location.href='/about/1'">홈페이지 설명</button>
+<button onclick="location.href='/about/2'">나의정보</button>
+<button onclick="location.href='/about/3'">사용기술</button>
+</div>
 </body>
 </html>
 @endsection
