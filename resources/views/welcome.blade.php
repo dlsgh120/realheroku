@@ -100,7 +100,7 @@
                    <div class="button-flex">
                    <button class="button-flex-item hover">SHOP</button>
                    <button class="button-flex-item hover" onclick = "location.href = '/board'">F/Q</button>
-                   <button class="button-flex-item hover" onclick = "location.href = '/about'">UBOUT ME</button>
+                   <button class="button-flex-item hover" onclick = "location.href = '/about/1'">UBOUT ME</button>
                    </div>
                 
 		   		</div>

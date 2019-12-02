@@ -18,7 +18,4 @@ class AboutController extends Controller
         return view('about_informaiton');
     }
 
-    public function usingTec(){
-        return view('about_usingTec');
-    }
 }

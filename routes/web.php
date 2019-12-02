@@ -41,5 +41,4 @@ Route::get('/about/1','AboutController@explane'); //홈페이지 설명
  
 Route::get('/about/2','AboutController@information'); //나의정보
 
-Route::get('/about/3','AboutController@usingTec'); //사용기술
 
