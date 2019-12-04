@@ -1,4 +1,5 @@
-@include('about')
+@extends('layouts.app')
+@section('content')
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
@@ -85,8 +86,35 @@
             transition:all 0.9s, color 0.3;
             border-radius:50% 50%;
 }
+
+.top-sub{
+    border-top:2px solid #e5e5e5;
+    border-bottom:2px solid #e5e5e5;
+    padding-top:20px;
+    padding-bottom:20px;
+    display:flex;
+}
+.top-sub-item{
+    margin-left:auto;
+    margin-right:auto;
+}
+.top-sub-item a {
+    margin-left:100px;
+    color:black;
+    font-weight:bold;
+    font-size:16px;
+}
 </style>
 <body>
+
+
+<div class="top-sub">
+<div class="top-sub-item">
+<a href="/about/1">홈페이지 설명</a>
+<a href="/about/2" style='border-bottom:1px solid; padding:5px;'>나의정보</a>
+</div>
+</div>
+
 <div class="profile">
 <div class="profile-main">Profile</div>
 </div>
@@ -136,3 +164,4 @@
  </div>
 </body>
 </html>
+@endsection

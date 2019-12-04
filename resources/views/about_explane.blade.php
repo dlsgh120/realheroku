@@ -1,4 +1,5 @@
-@include('about')
+@extends('layouts.app')
+@section('content')
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
@@ -44,8 +45,34 @@ h1{
             border-radius:24px;
             margin-top:50px;
 }
+
+.top-sub{
+    border-top:2px solid #e5e5e5;
+    border-bottom:2px solid #e5e5e5;
+    padding-top:20px;
+    padding-bottom:20px;
+    display:flex;
+}
+.top-sub-item{
+    margin-left:auto;
+    margin-right:auto;
+}
+.top-sub-item a {
+    margin-left:100px;
+    color:black;
+    font-weight:bold;
+    font-size:16px;
+}
 </style>
 <body>
+
+<div class="top-sub">
+<div class="top-sub-item">
+<a href="/about/1" style='border-bottom:1px solid; padding:5px;'>홈페이지 설명</a>
+<a href="/about/2">나의정보</a>
+</div>
+</div>
+
    <div class="content">
    <h1>신발을 쉽게 사고 팔수 있는 사이트</h1>
    <div class="content-item">
@@ -56,6 +83,7 @@ h1{
    </div>
        
    </div>
-   <button class="content-button hover">Go To Site</button>
+   <button class="content-button hover" onclick="location.href='/main'">Go To Site</button>
 </body>
 </html>
+@endsection

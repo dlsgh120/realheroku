@@ -11,16 +11,7 @@
 </head>
 @extends('layouts.app')
 <style>
-.profile{
-    margin-top:50px;
-    display:flex;
-}
-.profile-main{
-    font-size:30px;
-    font-weight:bold;
-    margin-left:auto;
-    margin-right:auto;
-}
+
 
 .table{
     width:90%;
@@ -51,14 +42,27 @@
 .bar{
     width:400px;
 }
-
+.category{
+    text-align:center;
+    border-top:2px solid #e5e5e5;
+    border-bottom:2px solid #e5e5e5;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.category a{
+    margin-left:30px;
+    font-size:16px;
+    font-weight:bold;
+    color:black;
+}
 </style>
 @section('content')
 <body>
-
-<div class="profile">
-<a class="profile-main" href='/board'>자유게시판</a>
+<div class="category">
+<a href="/board" style='border-bottom:1px solid; padding:5px;'>자유게시판</a>
+<a href="/notice">공지사항</a>
 </div>
+
 
 <div class="content">
     <table class="table table-hover">
@@ -96,7 +100,7 @@
     @if(empty(auth::user()))
         <button type="submit" class="btn" onclick = "location.href = '/login' ">글쓰기</button>
    @endif
-   @if(!empty(auth::user()))
+   @if(!empty(auth::user()) )
     <button type="submit" class="btn" onclick = "location.href = '/board/write' ">글쓰기</button>
     @endif
     </div>

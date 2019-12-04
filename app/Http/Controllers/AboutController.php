@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function index()
-    {
-        return view('about');
-    }
     public function explane(){
         return view('about_explane');
     }

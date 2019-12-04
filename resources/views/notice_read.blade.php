@@ -33,34 +33,38 @@
 
 <table class="table">
   <tr>
-    <td colspan="4" class="table-align-center">{{$boards->title}}</td>
+    <td colspan="4" class="table-align-center">{{$notices->title}}</td>
   </tr>
   <tr>
-    <td>글번호</td><td class="td-input">{{$boards->id}}</td>
-    <td>글쓴이</td><td class="td-input">{{$boards->userName}}</td>
+    <td>글번호</td><td class="td-input">{{$notices->id}}</td>
+    <td>글쓴이</td><td class="td-input">{{$notices->userName}}</td>
   </tr>
   <tr>
-    <td>작성날짜</td><td>{{$boards->date}}</td>
-    <td>조회수</td><td>{{$boards->count}}</td>
+    <td>작성날짜</td><td>{{$notices->date}}</td>
+    <td>조회수</td><td>{{$notices->count}}</td>
   </tr>
   <tr>
     <td colspan="4" class="table-align-center">본문</td>
   </tr>
   <tr>
-  <td colspan="4" height="300">{{$boards->content}}</td>
+  <td colspan="4" height="300">{{$notices->content}}</td>
   </tr>
   <tr>
-  <td class="table-border-none" colspan="3"><a href="/board">목록</a></td>
-  @if(!empty(Auth::user()) && $boards->userId==Auth::user()->id)
-  <td class="table-border-none2"><a href="/board/destroy/{{$boards->id}}">삭제</a><a class="table-add-item"href="/board/edit/{{$boards->id}}">수정</a></td>
+  <td class="table-border-none" colspan="3"><a href="/notice">목록</a></td>
+  @if(!empty(Auth::user()) && Auth::user()->id==21)
+  <td class="table-border-none2"><a href="/notice/destroy/{{$notices->id}}">삭제</a><a class="table-add-item"href="/notice/edit/{{$notices->id}}">수정</a></td>
   @endif
 
-  @if(!empty(Auth::user()) && Auth::user()->id != $boards->userId)
-  <a></a>
+  @if(!empty(Auth::user()) && Auth::user()->id !=21)
+    <?php
+        echo "<a></a>";
+    ?>
   @endif
 
   @if(empty(Auth::user()))
-  <a></a>
+    <?php
+        echo "<a></a>";
+    ?>
   @endif
   </tr>
 </table>

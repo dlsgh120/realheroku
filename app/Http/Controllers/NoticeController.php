@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Board;
+use App\Notice;
 
 use Illuminate\Http\Request;
 
@@ -9,31 +9,32 @@ use Illuminate\Support\Facades\Auth;
 
 use DB;
 
-class BoardController extends Controller
+
+class NoticeController extends Controller
 {
     public function index(Request $request)
     {
         $search=$request->input('search');
 
         if($request->has('search')){
-        $boards=Board::where('title','like','%'.$search.'%')->paginate(5);
+        $notices=Notice::where('title','like','%'.$search.'%')->paginate(5);
         }
         else{
-        $boards = Board::orderBy('id','desc')->paginate(5);
+        $notices = Notice::orderBy('id','desc')->paginate(5);
    
         }
         
-        return view('board',compact('boards'));
+        return view('notice',compact('notices'));
     }
 
     public function write()
     {
-        return view('write');
+        return view('notice_write');
     }
 
     public function store(Request $request)
     {   
-        $id=DB::table('boards')->max('id');
+        $id=DB::table('notices')->max('id');
         $userId=Auth::user()->id;
         $userName=Auth::user()->name;
         $title=$request->input('title');
@@ -41,7 +42,7 @@ class BoardController extends Controller
         $date=date("Y-m-d");
         $count=0;
 
-        Board::create([
+        Notice::create([
             'id'=>$id+1,
             'userId'=>$userId,
             'title'=>$title,
@@ -51,21 +52,23 @@ class BoardController extends Controller
             'count'=>$count
         ]);
 
-        return redirect('/board');
+        return redirect('/notice');
     }
-    
+
     public function read($id)
     {   
-        $boards = Board::find($id);
-        $boards->count=$boards->count+1;
-        $boards->save();
-        return view('read',compact('boards'));
+        
+        $notices = Notice::find($id);
+        $notices->count=$notices->count+1;
+        $notices->save();
+        return view('notice_read',compact('notices'));
+        
     }
 
     public function edit($id)
     {
-        $boards=Board::find($id);
-        return view('board_update',compact('boards'));
+        $notices=Notice::find($id);
+        return view('notice_update',compact('notices'));
     }
 
     public function update(Request $request, $id)
@@ -74,19 +77,18 @@ class BoardController extends Controller
         $content=$request->input('content');
         $date=date('Y-m-d');
 
-        $boards = DB::table('boards')
+        $notices = DB::table('notices')
               ->where('id', $id)
               ->update(['title' => $title, 'content'=> $content, 'date'=> $date]);
 
-        return redirect('/board');
+        return redirect('/notice');
     }
 
     public function destroy($id)
     {
-        $boards=Board::find($id);
-        $boards->delete();
+        $notices=Notice::find($id);
+        $notices->delete();
         
-        return redirect('/board');
+        return redirect('/notice');
     }
-
 }

@@ -35,10 +35,26 @@ Route::get('/board/destroy/{id}','BoardController@destroy'); //삭제
 
 /////////////////////////////////////////////////////
 
-Route::get('/about','AboutController@index');
-
 Route::get('/about/1','AboutController@explane'); //홈페이지 설명
  
 Route::get('/about/2','AboutController@information'); //나의정보
 
+//////////////////////////////////////////////////////
 
+Route::get('/notice','NoticeController@index');//공지사항
+
+Route::get('/notice/write','NoticeController@write'); //글쓰기 폼 열기
+
+Route::post('/notice','NoticeController@store'); //글쓰기 저장
+
+Route::get('/notice/read/{id}','NoticeController@read'); //글 읽기
+
+Route::get('/notice/edit/{id}','NoticeController@edit'); //글 변경하기 폼
+
+Route::post('/notice/update/{id}','NoticeController@update'); //공지사항 수정->업데이트
+
+Route::get('/notice/destroy/{id}','NoticeController@destroy'); //삭제
+
+//////////////////////////////////////////////////////////
+
+Route::get('/main','MainController@index');
