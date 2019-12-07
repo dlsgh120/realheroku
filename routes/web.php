@@ -58,3 +58,9 @@ Route::get('/notice/destroy/{id}','NoticeController@destroy'); //삭제
 //////////////////////////////////////////////////////////
 
 Route::get('/main','MainController@index');
+
+Route::get('/main/write','MainController@write');//메인페이지 글쓰기 폼 열기
+
+Route::post('/main','MainController@store'); //글쓰기 저장
+
+Route::get('/main/read/{id}','MainController@read'); //글 읽기

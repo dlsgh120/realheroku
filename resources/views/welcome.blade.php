@@ -98,7 +98,7 @@
                    <div class="c-logo">This is unique shoes shop</div>
                    </div>
                    <div class="button-flex">
-                   <button class="button-flex-item hover" onclick = "location.href = '/main'">SHOP</button>
+                   <button class="button-flex-item hover" onclick = "location.href = '/main'">MAIN</button>
                    <button class="button-flex-item hover" onclick = "location.href = '/board'">F/Q</button>
                    <button class="button-flex-item hover" onclick = "location.href = '/about/1'">UBOUT ME</button>
                    </div>
