@@ -13,6 +13,11 @@ body{
     font-size:23px;
     margin-bottom:20px;
 }
+.bottom-item{
+    font-size:13px;
+    color:#e5e5e5;
+    margin-top:5px;
+}
 </style>
 <html>
 <head></head>
@@ -28,16 +33,13 @@ body{
     
         <div class="form-group row">
             <div class="col-sm-10">
-                <textarea class="form-control" id="content" name="content" rows="6" placeholder="내용을 작성해주세요." required></textarea>
+                <textarea class="form-control" id="content" name="content" rows="6" placeholder="상품 내용을 정확하게 입력해주세요." required></textarea>
             </div>
         </div>
 
         <div class="form-group row">
             <div class="col-sm-10">
                 <input type="file" class="form-control"  name="image">
-                
-
-
             </div>
         </div>
         
@@ -56,6 +58,18 @@ body{
 
                 <div style="margin-top: 20px;">
                     <button type="submit" class="btn btn-primary">등록하기</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+
+                <div style="margin-top: 20px;">
+                    <a class="bottom-item">●상품 이미지를 반드시 등록해주세요</a></br>
+                    <a class="bottom-item">●상품정보를 정확하게 입력해 주세요.(상품이름, 상품 색상및 사이즈, 가격 등)</a></br>
+                    <a class="bottom-item">●판매자 및 구매자의 연락처를 입력해 주세요.(휴대폰번호, 카카오톡 등)</a></br>
+                    <a class="bottom-item">●정확하지 않은 정보 입력시 내용이 삭제 될 수 있습니다.</a></br>
                 </div>
             </div>
         </div>

@@ -31,6 +31,29 @@
     font-weight:bold;
     font-size:16px;
 }
+.page{
+    margin-top:20px;
+    margin-left:50px;
+}
+.bottom-item{
+
+display:flex;
+}
+.search{
+margin-left:auto;
+margin-right:auto;
+}
+.write{
+margin-top: 30px;
+display:flex;
+}
+.write-item{
+margin-left:auto;
+padding-right:5%;
+}
+.bar{
+width:400px;
+}
 </style>
 <body>
 
@@ -60,16 +83,27 @@
     @endforeach
 </table>
 
+<div class="page"> {{ $mains->links() }}</div>
+    <div class="bottom-item">
+        <div class="search">
+        <form method="get" action="/main">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
+            <input class="bar" type="text" name="search">
+            <input type="submit" value="검색">
+            </form>
+        </div>
+        </div>
+
 <div class="write">
     <div class="write-item">
-        @if(empty(auth::user()))
-        <button type="submit" class="btn" onclick="location.href = '/login' ">글쓰기</button>
-        @endif 
-        @if(!empty(auth::user()) )
-        <button type="submit" class="btn" onclick="location.href = '/main/write' ">글쓰기</button>
-        @endif
+    @if(empty(auth::user()))
+        <button type="submit" class="btn" onclick = "location.href = '/login' ">글쓰기</button>
+   @endif
+   @if(!empty(auth::user()) )
+    <button type="submit" class="btn" onclick = "location.href = '/main/write' ">글쓰기</button>
+    @endif
     </div>
-</div>
+    </div>
 
 
 </body>

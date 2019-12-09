@@ -11,10 +11,18 @@ use DB;
 
 class MainController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $mains = Main::orderBy('id','desc')->paginate(5);
+        $search=$request->input('search');
 
+        if($request->has('search')){
+        $mains=Main::where('title','like','%'.$search.'%')->paginate(5);
+        }
+        else{
+        $mains = Main::orderBy('id','desc')->paginate(5);
+   
+        }
+        
         return view('main',compact('mains'));
     }
 
@@ -60,11 +68,44 @@ class MainController extends Controller
 
     public function read($id)
     {   
-        
         $mains = Main::find($id);
         $mains->count=$mains->count+1;
         $mains->save();
-        return view('main_read',compact('mains'));
         
+        $jointable=DB::table('mains') // mains , reviews
+        ->join('reviews','reviews.boardId','=','mains.id')
+        ->where('mains.id','=',$id)
+        ->get();
+
+        return view('main_read',compact('mains','jointable'));
+        
+    }
+
+    public function edit($id)
+    {
+        $mains=Main::find($id);
+        return view('main_update',compact('mains'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $title=$request->input('title');
+        $content=$request->input('content');
+        $date=date('Y-m-d');
+        $image=$request->input('image_text');
+
+            $mains = DB::table('mains')
+            ->where('id', $id)
+            ->update(['title' => $title, 'content'=> $content, 'date'=> $date, 'image'=>$image]);
+    
+        return redirect('/main');
+    }
+
+    public function destroy($id)
+    {
+        $mains=Main::find($id);
+        $mains->delete();
+        
+        return redirect('/main');
     }
 }

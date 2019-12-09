@@ -64,3 +64,16 @@ Route::get('/main/write','MainController@write');//메인페이지 글쓰기 폼
 Route::post('/main','MainController@store'); //글쓰기 저장
 
 Route::get('/main/read/{id}','MainController@read'); //글 읽기
+
+Route::get('/main/edit/{id}','MainController@edit'); //글 변경하기 폼
+
+Route::post('/main/update/{id}','MainController@update'); //공지사항 수정->업데이트
+
+Route::get('/main/destroy/{id}','MainController@destroy'); //삭제
+
+////////////////////////////////////////////////////
+
+Route::post('/review/{getid}','ReviewController@store'); //리뷰작성
+
+Route::get('/review','ReviewController@index');
+

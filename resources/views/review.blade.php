@@ -1,9 +1,14 @@
-@extends('layouts.app')
-<!DOCTYPE>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
-@section('content')
+    <title>Document</title>
+</head>
 <style>
 .table{
     margin-left:auto;
@@ -12,31 +17,8 @@
     border:1px solid #e5e5e5;
     font-size:14px;
 }
-.table-align-center{
-    text-align:center;
-}
-.table-border-none{
-    border:1px solid white;
-}
-.table-border-none2{
-    border:1px solid white;
-    text-align:right;
-}
-.table-add-item{
-  margin-left:20px;
-}
-.review-btn{
-  border:1px solid #e5e5e5;
-  border-radius:30%;
-  width:100px;
-  height:70px;
-}
 </style>
-<html>
-<head></head>
-<title></title>
 <body>
-
 <table class="table">
   <tr>
     <td colspan="4" class="table-align-center">{{$mains->title}}</td>
@@ -72,51 +54,20 @@
 </table>
 
 
-<!-- review write -->
+<!--  -->
 
-
-<div>
-<table class="table">
-<form method="post" action="/review/{{$mains->id}}">
-<input type="hidden" name="_token" value="{{ csrf_token() }}">
-<tr>
-<td style="width:200px;"><a>댓글달기</a></br><a>@if(!empty(Auth::user()))
-{{Auth::user()->name}}
-@endif
-@if(empty(Auth::user()))
-로그인후 이용바랍니다.
-@endif
-</a></td>
-<td>
-@if(!empty(Auth::user()))
-<textarea style="width:450px; height:70px;" name="review_text"></textarea>
-@endif
-@if(empty(Auth::user()))
-<textarea style="width:450px; height:70px;" readonly></textarea>
-@endif
-</td>
-<td><button type="submit" class="review-btn">등록</button></td>
-</tr>
-</form>
-</table>
-</div>
-
-<!-- review -->
 <div class="review">
   <table class="table">
-
-  @foreach($jointable as $review)   
-   @if($review->type=='mains')
+    @foreach($test as $review)
+        @if($review->boardId=='6')
     <tr>
     <td style="width:200px;"><a>{{$review->userName}}</a></br><a>{{$review->date}}</a></td>
     <td>{{$review->content}}</td>
+    <td>{{$review->boardId}}</td>
     </tr>
-  @endif
-  @endforeach
+        @endif
+    @endforeach
   </table>
 </div>
-
-
 </body>
 </html>
-@endsection
