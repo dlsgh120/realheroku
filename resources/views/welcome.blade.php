@@ -1,29 +1,15 @@
 @extends('layouts.app')
 @section('content')
 <!DOCTYPE html>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-<script src="//code.jquery.com/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
-
-        <!-- Styles -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+<meta name="viewprot" content="width=device-width">
+        <title>choiinho</title>
         <style>
-          html, body { 
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                /* background:url("/images/slide_2.jpg"); */
-                background-repeat:no-repeat;
-                background-attachment:fixed;
-                
-            }
         
          
         .c-logo{
@@ -58,9 +44,6 @@
         .button-flex-item:hover{
             box-shadow: 0 80px 0 0 rgba(0,0,0,0.25) inset, 
             0 -80px 0 0 rgba(0,0,0,0.25) inset;
-        }
-        .bottom{
-        
         }
         .menubar{
             display:flex;
@@ -153,13 +136,11 @@
             .main{
                 margin-top:100px;
                 display:flex;
-                margin-left:15%;
-                margin-right:15%;
-             
+                width:100%;
+                overflow:auto;
             }
             .main-flex{
                 display:flex;
-              
                 margin-left:auto;
                 margin-right:auto;
             }
@@ -169,9 +150,6 @@
                 height:300px;
                 border:1px solid #e5e5e5;
                 
-            }
-            .bottom{
-                border:1px solid;
             }
             .logo{
            
@@ -368,6 +346,3 @@
     </body>
 </html>
 @endsection
-
-<div>
-</div>
