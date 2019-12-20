@@ -222,6 +222,11 @@
                     color:gray;
                     font-size:12px;
                 }
+                .show-more{
+                    margin-left:60%;
+                    font-size:14px;
+                    color:black;
+                }
         </style>
     </head>
     <body>
@@ -299,71 +304,40 @@
         <div class="main-flex">
                 <table class="table table:hover">
                     <tr>
-                        <td>사고/팔기</td>
+                        <td style="border:3px solid #e5e5e5;"><a style="font-weight:bold;">사고/팔기</a><a class="show-more" href="/main">+더보기</a></td>
                     </tr>
+                    @foreach($mains as $main)
                     <tr>
-                        <td>1</td>
+                       <td style="font-size:13px;"><a href="/main/read/{{$main->id}}" style="color:black;">{{'- '.$main->title}}</a></td>
+                      
                     </tr>
-                    <tr>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                    </tr>
+                    @endforeach
                 </table>    
         
 
                 <table class="table table:hover">
                     <tr>
-                        <td>자유게시판</td>
+                         <td style="border:3px solid #e5e5e5;"><a style="font-weight:bold;">자유게시판</a><a class="show-more" href="/board">+더보기</a></td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                    </tr>
+                    @foreach($boards as $board)
+                       <tr>
+                         <td style="font-size:13px;"><a href="/board/read/{{$board->id}}" style="color:black;">{{'- '.$board->title}}</a></td> 
+                       </tr>
+                    @endforeach
                 </table>    
           
                 <table class="table table:hover">
                     <tr>
-                        <td>공지사항</td>
+                        <td style="border:3px solid #e5e5e5;"><a style="font-weight:bold;">공지사항</a><a class="show-more" href="/notice">+더보기</a></td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                    </tr>
+                    @foreach($notices as $notice)
+                       <tr>
+                         <td style="font-size:13px;"><a href="/notice/read/{{$notice->id}}" style="color:black;">{{'- '.$notice->title}}</a></td> 
+                       </tr>
+                    @endforeach
                 </table>    
             </div>
       </div>
-
-
 
       <div class="bottoms">
     <div class="bottom-center-item">
