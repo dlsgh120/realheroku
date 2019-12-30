@@ -5,12 +5,32 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 @section('content')
 <style>
+
+.top-sub{
+    border-top:2px solid #e5e5e5;
+    border-bottom:2px solid #e5e5e5;
+    padding-top:20px;
+    padding-bottom:20px;
+    display:flex;
+}
+.top-sub-item{
+    margin-left:auto;
+    margin-right:auto;
+}
+.top-sub-item a {
+    margin-left:100px;
+    color:black;
+    font-weight:bold;
+    font-size:16px;
+}
+
 .table{
     margin-left:auto;
     margin-right:auto;
     width:800px;
     border:1px solid #e5e5e5;
     font-size:14px;
+    margin-top:50px;
 }
 .table-align-center{
     text-align:center;
@@ -36,6 +56,13 @@
 <head></head>
 <title></title>
 <body>
+
+<div class="top-sub">
+<div class="top-sub-item">
+<a href="/main" style='border-bottom:1px solid; padding:5px;'>사고/팔기</a>
+<a href="/main/share">공유</a>
+</div>
+</div>
 
 <table class="table">
   <tr>
@@ -116,7 +143,7 @@
   </table>
 </div>
 
-
+@include('bottom')
 </body>
 </html>
 @endsection

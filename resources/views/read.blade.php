@@ -5,12 +5,28 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 @section('content')
 <style>
+
+.category{
+    text-align:center;
+    border-top:2px solid #e5e5e5;
+    border-bottom:2px solid #e5e5e5;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.category a{
+    margin-left:30px;
+    font-size:16px;
+    font-weight:bold;
+    color:black;
+}
+
 .table{
     margin-left:auto;
     margin-right:auto;
     width:800px;
     border:1px solid #e5e5e5;
     font-size:14px;
+    margin-top:50px;
 }
 .table-align-center{
     text-align:center;
@@ -30,6 +46,11 @@
 <head></head>
 <title></title>
 <body>
+
+<div class="category">
+<a href="/board" style='border-bottom:1px solid; padding:5px;'>자유게시판</a>
+<a href="/notice">공지사항</a>
+</div>
 
 <table class="table">
   <tr>
@@ -65,6 +86,7 @@
   </tr>
 </table>
 
+@include('bottom')
 </body>
 </html>
 @endsection
