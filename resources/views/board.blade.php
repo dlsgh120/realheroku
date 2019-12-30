@@ -14,20 +14,25 @@
 
 
 .table{
-    width:90%;
+    width:1000px;
     margin-top:50px;
-    margin-left:50px;
-    margin-right:50px;
+    margin-left:20%;
+}
+.page-flex{
+    display:flex;
 }
 .page{
     margin-top:20px;
-    margin-left:50px;
+    margin-left:auto;
+    margin-right:auto;
+   
 }
-.bottom-item{
+.middle-item{
 
     display:flex;
 }
 .search{
+    display:flex;
     margin-left:auto;
     margin-right:auto;
 }
@@ -36,8 +41,8 @@
     display:flex;
 }
 .write-item{
-    margin-left:auto;
     padding-right:5%;
+margin-left:30px;
 }
 .bar{
     width:400px;
@@ -84,28 +89,34 @@
    @endforeach
     </table>
     
+    <div class="page-flex">
         <div class="page"> {{ $boards->links() }}</div>
-    <div class="bottom-item">
+    </div>
+
+    <div class="middle-item">
         <div class="search">
         <form method="get" action="/board">
         <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
             <input class="bar" type="text" name="search">
             <input type="submit" value="검색">
             </form>
-        </div>
-        </div>
 
-    <div class="write">
-    <div class="write-item">
+            <div class="write-item">
     @if(empty(auth::user()))
         <button type="submit" class="btn" onclick = "location.href = '/login' ">글쓰기</button>
    @endif
    @if(!empty(auth::user()) )
     <button type="submit" class="btn" onclick = "location.href = '/board/write' ">글쓰기</button>
     @endif
+          </div>
+
     </div>
-    </div>
-    </div>
+        </div>
+
+    <!-- <div class="write">
+   
+     </div> -->
+        @include('bottom')
 </body>
 @endsection
 </html>

@@ -162,6 +162,8 @@
  <a class="bottom-main-item"></br>Cloude Service</br>Heroku</a>
  </div>
  </div>
+
+ @include('bottom')
 </body>
 </html>
 @endsection

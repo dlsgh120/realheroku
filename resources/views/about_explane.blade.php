@@ -84,6 +84,8 @@ h1{
        
    </div>
    <button class="content-button hover" onclick="location.href='/main'">Go To Site</button>
+
+   @include('bottom')
 </body>
 </html>
 @endsection

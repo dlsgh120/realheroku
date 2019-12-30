@@ -14,29 +14,28 @@
 
 
     .table{
-        width:90%;
+        width:1000px;
         margin-top:50px;
-        margin-left:50px;
-        margin-right:50px;
+        margin-left:20%;
+        
     }
     .page{
         margin-top:20px;
-        margin-left:50px;
+        margin-left:auto;
+        margin-right:auto;
     }
-    .bottom-item{
+    .middle-item{
 
         display:flex;
+    
     }
     .search{
         margin-left:auto;
         margin-right:auto;
-    }
-    .write{
-        margin-top: 30px;
         display:flex;
     }
     .write-item{
-        margin-left:auto;
+        margin-left:30px;
         padding-right:5%;
     }
     .bar{
@@ -55,13 +54,11 @@
         font-weight:bold;
         color:black;
     }
-    .bottom-flex{
+    .page-flex{
         display:flex;
     }
     .btn{
         border:1px solid #e5e5e5;
-        position:absolute;
-        right:10%;
         color:black;
         background:#e5e5e5;
         padding-top:10px;
@@ -95,10 +92,19 @@
     </table>
     </div>
 
-        <div class="bottom-flex">
+        <div class="page-flex">
         <div class="page"> {{ $notices->links() }}</div>
+        </div>
 
-        <div class="bottom">
+    <div class="middle-item">
+        <div class="search">
+        <form method="get" action="/notice">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
+            <input class="bar" type="text" name="search">
+            <input type="submit" value="검색">
+            </form>
+            
+        <div class="write-item">
         <?php
             if(!empty(auth::user()) && auth::user()->id !=21){
                 echo "<a></a>";
@@ -112,18 +118,11 @@
             }
             ?>
         </div>
-        </div>
 
-    <div class="bottom-item">
-        <div class="search">
-        <form method="get" action="/notice">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
-            <input class="bar" type="text" name="search">
-            <input type="submit" value="검색">
-            </form>
         </div>
         </div>
         
+        @include('bottom')
     </body>
     @endsection
     </html>
