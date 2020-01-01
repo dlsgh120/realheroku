@@ -59,7 +59,14 @@ class BoardController extends Controller
         $boards = Board::find($id);
         $boards->count=$boards->count+1;
         $boards->save();
-        return view('read',compact('boards'));
+
+        // return view('read',compact('boards'));
+        $jointable=DB::table('boards') // boards , reviews
+        ->join('reviews','reviews.boardId','=','boards.id')
+        ->where('boards.id','=',$id)
+        ->get();
+
+        return view('read',compact('boards','jointable'));
     }
 
     public function edit($id)

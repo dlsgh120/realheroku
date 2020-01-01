@@ -75,7 +75,9 @@ Route::get('/main/destroy/{id}','MainController@destroy'); //삭제
 
 ////////////////////////////////////////////////////
 
-Route::post('/review/{getid}','ReviewController@store'); //리뷰작성
+Route::post('/review/{getid}','ReviewController@store'); //리뷰작성 
+
+Route::post('/review2/{getid}','ReviewController@storeboard'); //리뷰작성(자유게시판)
 
 Route::get('/review','ReviewController@index');
 

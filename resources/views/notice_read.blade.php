@@ -41,6 +41,11 @@
 .table-add-item{
   margin-left:20px;
 }
+.notice{
+  border:1px solid white;
+  color:red;
+  font-weight:bold;
+}
 </style>
 <html>
 <head></head>
@@ -87,6 +92,9 @@
         echo "<a></a>";
     ?>
   @endif
+  </tr>
+  <tr>
+  <td class="notice">●공지사항은 댓글기능이 제한되어 있습니다.</td>
   </tr>
 </table>
 

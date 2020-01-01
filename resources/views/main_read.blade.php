@@ -60,7 +60,7 @@
 <div class="top-sub">
 <div class="top-sub-item">
 <a href="/main" style='border-bottom:1px solid; padding:5px;'>사고/팔기</a>
-<a href="/main/share">공유</a>
+<!-- <a href="/main/share">공유</a> -->
 </div>
 </div>
 

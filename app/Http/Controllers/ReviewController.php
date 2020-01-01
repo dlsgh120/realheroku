@@ -52,5 +52,29 @@ class ReviewController extends Controller
         return view('review',compact('test','mains'));
     }
 
+
+    public function storeboard(Request $request, $getid)
+    {   
+        $id=DB::table('reviews')->max('id');
+        $userId=Auth::user()->id;
+        $type="boards";
+        // $boardId=$getid;
+        $content=$request->input('review_text');
+        $date=date("Y-m-d");
+        $userName=Auth::user()->name;
+
+        Review::create([
+            'id'=>$id+1,
+            'userId'=>$userId,
+            'type'=>$type,
+            'boardId'=>$getid,
+            'content'=>$content,
+            'date'=>$date,
+            'userName'=>$userName
+        ]);
+
+        return redirect()->back();
+        
+    }
     
 }

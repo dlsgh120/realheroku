@@ -41,6 +41,12 @@
 .table-add-item{
   margin-left:20px;
 }
+.review-btn{
+  border:1px solid #e5e5e5;
+  border-radius:30%;
+  width:100px;
+  height:70px;
+}
 </style>
 <html>
 <head></head>
@@ -85,6 +91,52 @@
   @endif
   </tr>
 </table>
+
+<!-- review write -->
+
+
+<div>
+<table class="table">
+<form method="post" action="/review2/{{$boards->id}}">
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
+<tr>
+<td style="width:200px;"><a>댓글달기</a></br><a>@if(!empty(Auth::user()))
+{{Auth::user()->name}}
+@endif
+@if(empty(Auth::user()))
+로그인후 이용바랍니다.
+@endif
+</a></td>
+<td>
+@if(!empty(Auth::user()))
+<textarea style="width:450px; height:70px;" name="review_text"></textarea>
+@endif
+@if(empty(Auth::user()))
+<textarea style="width:450px; height:70px;" readonly></textarea>
+@endif
+</td>
+<td><button type="submit" class="review-btn">등록</button></td>
+</tr>
+</form>
+</table>
+</div>
+
+<!-- review -->
+<div class="review">
+  <table class="table">
+
+  @foreach($jointable as $review)   
+   @if($review->type=='boards')
+    <tr>
+    <td style="width:200px;"><a>{{$review->userName}}</a></br><a>{{$review->date}}</a></td>
+    <td>{{$review->content}}</td>
+    </tr>
+  @endif
+  @endforeach
+  </table>
+</div>
+
+
 
 @include('bottom')
 </body>

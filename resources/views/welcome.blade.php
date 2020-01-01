@@ -214,7 +214,7 @@
                 <li><a href="/main">MAIN</a>
                     <ul>
                         <li><a href="/main">BUY/SELL</a></li>
-                        <li><a href="/share">SHARE</a></li>
+                        <!-- <li><a href="/share">SHARE</a></li> -->
                     </ul>
                 </li>
                 <li><a href="/board">F/Q</a>
