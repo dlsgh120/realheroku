@@ -156,7 +156,7 @@
  <div class="bottom2">
  <div class="bottom2-main">
  <a class="bottom-main-item"></br>language</br>php 7.3</a>
- <a class="bottom-main-item"></br>DB</br>mysql8.0</a>
+ <a class="bottom-main-item"></br>DB</br>mysql</a>
  <a class="bottom-main-item"></br>Server</br>apache2.2</a>
  <a class="bottom-main-item"></br>FrameWork</br>Laravel6.0</a>
  <a class="bottom-main-item"></br>Cloude Service</br>Heroku</a>
