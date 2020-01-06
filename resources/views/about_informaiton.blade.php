@@ -121,7 +121,7 @@
  <div class="content">
     <div class="content-main">
         <div class="content-photo">
-            <img src="/images/slide_2.jpg" width="200px" height="250px">
+            <img src="/images/300-1.jpg" width="200px" height="250px">
         </div>
         <div class="content-info">
             <a class="a1">안녕하세요.</a> </br>
