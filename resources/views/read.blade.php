@@ -130,6 +130,20 @@
     <tr>
     <td style="width:200px;"><a>{{$review->userName}}</a></br><a>{{$review->date}}</a></td>
     <td>{{$review->content}}</td>
+
+    @if(empty(Auth::user()))
+   <td></td>
+    @endif
+
+    @if(!empty(Auth::user())&& Auth::user()->id == $review->userId)
+    <td style="text-align:right;"><a style="color:black;" href="/review/delete/{{$review->id}}">삭제</a></td>
+    @endif
+
+    @if(!empty(Auth::user())&& Auth::user()->id != $review->userId)
+    <td></td>
+    @endif
+    
+
     </tr>
   @endif
   @endforeach

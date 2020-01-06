@@ -76,5 +76,13 @@ class ReviewController extends Controller
         return redirect()->back();
         
     }
+
+    public function deleteMain($id)
+    {
+        $reviews=Review::find($id);
+        $reviews->delete();
+        
+        return redirect()->back();
+    }
     
 }

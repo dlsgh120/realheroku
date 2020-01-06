@@ -81,3 +81,4 @@ Route::post('/review2/{getid}','ReviewController@storeboard'); //리뷰작성(�
 
 Route::get('/review','ReviewController@index');
 
+Route::get('/review/delete/{id}','ReviewController@deleteMain');//메인 페이지 리뷰 삭제
